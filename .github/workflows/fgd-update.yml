@@ -1,0 +1,30 @@
+name: Update TrenchBroom FGD
+on:
+    schedule:
+    - cron: 0 8 * * *
+    workflow_dispatch:
+
+jobs:
+    Do-The-Thing:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                ref: ${{ github.head_ref }}
+            - name: Get apt ready
+              run: |
+                apt update
+                apt install -y wget
+            - name: Download FGD
+              run: |
+                git config --global --add safe.directory $GITHUB_WORKSPACE
+                cd $GITHUB_WORKSPACE
+                rm -f tb-nzp.fgd
+                wget -nc https://raw.githubusercontent.com/nzp-team/assets/main/source/maps/fgd/tb-nzp.fgd
+            - name: Commit and Push
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                commit_message: Update TrenchBroom FGD
+                branch: main
+                commit_user_name: Awesome NZ:P Updater Bot
+                commit_user_email: nope@example.org
