@@ -1286,6 +1286,14 @@
 	health(integer) : "Damage Threshold" : 60
 ]
 
+@SolidClass base(Targetname) = spawn_zone : "Zone Spawning Definition" 
+[
+	zone_name(string) : "Name of Zone" : ""
+	adjacent_zones(string) : "Comma separated list of touching Zones (e.g. 'spawn_zone, jugg_zone, third_zone'), Up to 8" : ""
+	zone_target(target_source) : "Targetname of all AI that are spawnable in this Zone"
+	zone_fog(string) : "Fog value specific to this Zone"
+]
+
 @SolidClass base(Targetname) = func_button : "Button" 
 [
 	speed(integer) : "Speed" : 40
@@ -1713,6 +1721,31 @@ NOTE: set angle value to 0 if using angles key to rotate mdls"
 	angles(integer) : "set 'angle' to 0 if this is used"
 	mdlsz(integer) : "Entity size (x y z)"
 	centeroffset(integer) : "Model center offset"
+	gamemode_limiter(choices) : "Only Appear on specified Game Mode" : 0 =
+	[
+		0: "All Modes"
+		2: "Gun Game"
+		3: "Hardcore"
+		4: "Wild West"
+		5: "Sticks & Stones"
+		6: "FEVER"
+	]
+	month_limiter(choices) : "Only Appear on specified Month of the Year" : 0 =
+	[
+		0: "All Year"
+		1: "January"
+		2: "February"
+		3: "March"
+		4: "April"
+		5: "May"
+		6: "June"
+		7: "July"
+		8: "August"
+		9: "September"
+		10: "October"
+		11: "November"
+		12: "December"
+	]
 	spawnflags(flags) =
 		[
 			1: "Gravity" : 0
