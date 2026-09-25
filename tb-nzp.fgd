@@ -1026,7 +1026,7 @@
 	message(string) : "Command"
 ]
 
-@PointClass base(Targetname) color(256 256 0) = info_command : "Triggered Server Command"
+@PointClass base(Targetname) color(255 255 0) = info_command : "Triggered Server Command"
 [
 	message(string) : "Command"
 ]
