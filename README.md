@@ -2,4 +2,4 @@
 
 ## About
 
-This repository contains the TrenchBroom profile and up-to-date `.FGD` for NZ:P. It is updated nightly.
+This repository contains the TrenchBroom profile and up-to-date `.FGD` for NZ:P. It is updated nightly. 
